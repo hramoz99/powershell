@@ -1,10 +1,12 @@
-# Comando para obtermos o serviÁo no computador da rede chamado SRV01
-# DICA: Para obtermos um serviÁo em nossa m·quina local, podemos omitir o argumento -ComputerName
+# Comandos
+
+#### Comando para obtermos o servi√ßo no computador da rede chamado SRV01
+>  DICA: Para obtermos um servi√ßo em nossa m√°quina local, podemos omitir o argumento -ComputerName
 Get-Service -Name "ByteBank Interface Service" -ComputerName "SRV01"
 
-# Armazenando o resultado do comando em uma vari·vel
+# Armazenando o resultado do comando em uma vari√°vel
 $servico = Get-Service -Name "ByteBank Interface Service" -ComputerName "SRV01"
 
-# Invocando mÈtodos deste objeto
+# Invocando m√©todos deste objeto
 $servico.Stop()
 $servico.Start()
