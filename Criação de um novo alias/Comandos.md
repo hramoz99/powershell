@@ -1,36 +1,59 @@
-#### Invocando um script .bat com o Command Precedence
+## `Comandos`
+
+#### Invocar um script .bat com o Command Precedence
+```
 .\reiniciaServicoSrv01.bat
+```
 
-#### Imprimindo a variável de ambiente PATH na console
+#### Imprimir a variável de ambiente PATH na console
+```
 echo $env:path
-# Também podemos simplesmente executar a expressão 
+```
+
+#### Imprimir a variável de ambiente PATH na console (simplificado)
+```
 $env:path
+```
 
-# Como o PowerShell é orientado a objetos com .NET, podemos invocar o método GetType()(verifica o tipo de dado armazenado dentro da variavel) em qualquer variável 
+#### Invocar o método GetType() para verificar o tipo de dado armazenado dentro da variável 
+```
 $env:path.GetType()
+```
 
-# Podemos invocar o método Split da classe string na variável PATH! (Split() divida uma string)
+#### Dividir string com o Método Split, com base no caractér escolhido
+```
 $env:path.Split(';')
+```
 
-# Podemos usar o comando Get-Member para verificarmos as propriedades e os métodos dsponíveis no objeto
+#### Verificar as propriedades e os métodos disponíveis no objeto
+```
 $env:path | Get-Member
+```
 
-# Conseguimos obter todos os apelidos de comandos (ALIAS) no PowerShell com o comando Get-Alias
+#### Obter todos os apelidos de comandos no PowerShell
+```
 Get-Alias
+```
 
-# Conseguimos obter todos os comandos no PowerShell com o comando Get-Command
+#### Obter todos os comandos no PowerShell
+```
 Get-Command
+```
 
-# Com o argumento -Name, nós conseguimos filtrar os comandos que possuem rename no nome. (O asterisco atua como coringa para qualquer quantidade de caractere)
+#### Filtrar os comandos com o argumento -Name 
+```
 Get-Command -Name *rename*
+```
 
-# Obtendo ajuda do comando rename-item
-Get-Help Name rename-item
+#### Como obter ajuda sobre um comando
+```
+Get-Help Rename-Item
+```
 
-# Com o SwitchArgument -WhatIf podemos saber o que o comando faria antes de executarmos-o
+#### Com o SwitchArgument -WhatIf podemos saber o que o comando faria antes de executarmos-o
 Rename-Item C:\Scripts\script.bat C:\Scripts\script_migrando.bat -WhatIf
 
-# Sem o SwitchArgument, tudo funciona normalmente
+#### Sem o SwitchArgument, tudo funciona normalmente
 Rename-Item C:\Scripts\script.bat C:\Scripts\script_migrando.bat 
 
 # Atualizamos os tópicos de ajuda do PowerShell com o comando Update-Help
@@ -58,12 +81,8 @@ rename C:\Scripts\script.bat C:\Scripts\script_migrando.bat
 # Note que nem sempre este arquivo existe!
 $profile
 
-# Podemos criar um novo Profile com o comando
+#### Criação de um novo Profile
 New-Item $profile
-
-# Sem nenhuma configuração inicial, não poderemos executar um script do PowerShell
-# por conta das políticas de execução. Podemos saber mais sobre isso executando:
-Get-Help about_ExecutionPolicy
 
 # Para obtermos a política de execução corrente, usamos...
 Get-ExecutionPolicy
