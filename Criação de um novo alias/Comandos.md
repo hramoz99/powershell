@@ -15,7 +15,7 @@ echo $env:path
 $env:path
 ```
 
-#### Invocar o método GetType() para verificar o tipo de dado armazenado dentro da variável 
+#### Verificar o tipo de dado armazenado dentro da variável 
 ```
 $env:path.GetType()
 ```
@@ -45,36 +45,38 @@ Get-Command
 Get-Command -Name *rename*
 ```
 
-#### Como obter ajuda sobre um comando
+#### Obter ajuda sobre um comando
 ```
 Get-Help Rename-Item
 ```
 
-#### Com o SwitchArgument -WhatIf podemos saber o que o comando faria antes de executarmos-o
+#### simular o que o comando faria sem realmente executá-lo 
+```
 Rename-Item C:\Scripts\script.bat C:\Scripts\script_migrando.bat -WhatIf
-
-#### Sem o SwitchArgument, tudo funciona normalmente
-Rename-Item C:\Scripts\script.bat C:\Scripts\script_migrando.bat 
-
-# Atualizamos os tópicos de ajuda do PowerShell com o comando Update-Help
+```
+#### Atualizar os tópicos de ajuda do PowerShell
+```
 Update-Help
+```
 
-# Obtemos todos os scripts que atuam com Aliases, com o comando "Get-Command -noun alias"
+#### Obter todos os scripts que atuam com Alias
+```
 Get-Command -noun alias
+```
 
-# O Get-Help retorna a ajuda ou a sintaxe de um comando, quando um documento de ajuda não estiver disponível
-Get-Help new-alias
-
-# Com new-alias podemos criar novos aliases
+#### Criar novos alias
+```
 new-alias -Name="rename" rename-item
+```
 
-#Podemos verificar nosso alias criado com o comando abaixo
+#### Podemos verificar nosso alias criado com o comando abaixo
+```
 get-alias rename
-
-#Alias feito, agora podemos executar!
+```
+#### Alias feito, agora podemos executar!
+```
 rename C:\Scripts\script.bat C:\Scripts\script_migrando.bat 
-
-
+```
 
 # Para acessarmos o endereço do profile vigente no contexto do PowerShell, podemos
 # usar a variável $profile.
