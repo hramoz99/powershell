@@ -50,59 +50,58 @@ Get-Command -Name *rename*
 Get-Help Rename-Item
 ```
 
-#### simular o que o comando faria sem realmente executá-lo 
+#### Simular o que o comando faria 
 ```
 Rename-Item C:\Scripts\script.bat C:\Scripts\script_migrando.bat -WhatIf
 ```
+
 #### Atualizar os tópicos de ajuda do PowerShell
 ```
 Update-Help
 ```
 
-#### Obter todos os scripts que atuam com Alias
+#### Obter todos os scripts que atuam com aliases
 ```
 Get-Command -noun alias
 ```
 
-#### Criar novos alias
+#### Criar novos aliases
 ```
 new-alias -Name="rename" rename-item
 ```
 
-#### Podemos verificar nosso alias criado com o comando abaixo
+#### Verificar todos alias 
 ```
 get-alias rename
 ```
-#### Alias feito, agora podemos executar!
+
+#### Trocar nome do arquivo com alias 
 ```
 rename C:\Scripts\script.bat C:\Scripts\script_migrando.bat 
 ```
 
-# Para acessarmos o endereço do profile vigente no contexto do PowerShell, podemos
-# usar a variável $profile.
-# Note que nem sempre este arquivo existe!
-$profile
-
-#### Criação de um novo Profile
+#### Criação de um novo arquivo Profile
+```
 New-Item $profile
+```
 
-# Para obtermos a política de execução corrente, usamos...
+#### Obter a política de execução corrente
+```
 Get-ExecutionPolicy
+```
 
-# ...e para mudarmos seu valor (é necessário rodas o powershell como administrador)
+#### Mudar o valor da política (necessário rodar o powershell como administrador)
+```
 Set-ExecutionPolicy Unrestricted
+```
 
-# Coringas também funcionam no comando Get-Help!
-Get-Help about_*
-
-Get-Help about_profiles
-
-# Verificando o local onde deve ser armazenado o script de profile para todos os usuários e todos os hosts
+#### Verificar o local de armazenado do script de profile de todos os usuários e hosts
+```
 $Profile.AllUsersAllHosts
 
 New-Item $Profile.AllUsersAllHosts
 notepad $Profile.AllUsersAllHosts
-
+```
 
 
 
