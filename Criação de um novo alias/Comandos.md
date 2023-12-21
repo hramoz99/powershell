@@ -20,7 +20,7 @@ $env:path
 $env:path.GetType()
 ```
 
-#### Dividir string com o Método Split, com base no caractér escolhido
+#### Dividir uma string, com base no caractér escolhido
 ```
 $env:path.Split(';')
 ```
@@ -50,7 +50,7 @@ Get-Command -Name *rename*
 Get-Help Rename-Item
 ```
 
-#### Simular o que o comando faria 
+#### Simulação da ação do comando 
 ```
 Rename-Item C:\Scripts\script.bat C:\Scripts\script_migrando.bat -WhatIf
 ```
@@ -75,7 +75,7 @@ new-alias -Name="rename" rename-item
 get-alias rename
 ```
 
-#### Trocar nome do arquivo com alias 
+#### Trocar o nome do arquivo com alias 
 ```
 rename C:\Scripts\script.bat C:\Scripts\script_migrando.bat 
 ```
@@ -90,12 +90,12 @@ New-Item $profile
 Get-ExecutionPolicy
 ```
 
-#### Mudar o valor da política (necessário rodar o powershell como administrador)
+#### Mudar o valor da política (powershell como administrador)
 ```
 Set-ExecutionPolicy Unrestricted
 ```
 
-#### Verificar o local de armazenado do script de profile de todos os usuários e hosts
+#### Local de armazenamento do script de profile de todos os usuários e hosts
 ```
 $Profile.AllUsersAllHosts
 
