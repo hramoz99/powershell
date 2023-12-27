@@ -95,7 +95,7 @@ Get-ExecutionPolicy
 Set-ExecutionPolicy Unrestricted
 ```
 
-#### Local de armazenamento do script de profile de todos os usuários e hosts
+#### Local de armazenamento do script de profile dos usuários e hosts
 ```
 $Profile.AllUsersAllHosts
 
